@@ -1,123 +1,161 @@
-<button onclick="window.location.href='activities.html'">Info</button> 
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Lesson Github</title>
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/line-awesome.min.css">
+<script async="" type="text/javascript" charset="UTF-8" src="js/tag.min.js"></script></head>
+<body class="default">
+<div id="preroll"></div>
 <script>
-    function blank(){
-      (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe); var script = win.document.createElement("script"); script.src = ""; win.document.body.appendChild(script); })();
-    }
-    </script>
-    <button onclick="blank();">More...</button>
-<title>Calculator</title>
-<style>
-    button {
-      font-size: 1.2rem; 
-      padding: 0.8rem 1.2rem; 
-      border: none; 
-      border-radius: 0.5rem; 
-      background-color: #ffffff; 
-      color: #000000; 
-      cursor: pointer; 
-      transition: all 0.2s ease-in-out; 
-    }
+	function getScript(src) {
+    var headElm = document.head || document.getElementsByTagName('head')[0];
+    var script = document.createElement("script");
+    var once = true;
+    script.async = "async";
+    script.type = "text/javascript";
+    script.charset = "UTF-8";
+    script.src = src;
+    script.onload = script.onreadystatechange = function() {
+        if (once && (!script.readyState || /loaded|complete/.test(script.readyState))) {
+            once = false;         
+            script.onload = script.onreadystatechange = null;
+			console.log("okeey");
+        }
+    };
+	  headElm.appendChild(script);
+}
 
-    button:hover {
-      transform: translateY(-2px); 
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-</style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js" integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<style>
-    body { background-color: #000000; }
+ 
+	getScript("https://api.adinplay.com/libs/aiptag/pub/GDU/worm.ist/tag.min.js");
+ 
+	window.aiptag = window.aiptag || {cmd: []};
+	aiptag.cmd.display = aiptag.cmd.display || [];
+	aiptag.cmd.player = aiptag.cmd.player || [];
 
-   table {
-                 border: 1px solid black;
-                        margin-left: auto;
-                        margin-right: auto;
-                }
+	//CMP tool settings
+	aiptag.cmp = {
+		show: true,
+		position: "centered",  //centered, bottom
+		button: true,
+		buttonText: "Privacy settings",
+		buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+	}
 
-                input[type="button"] {
-                        width: 100%;
-                        padding: 20px 40px;
-                        background-color: rgb(255, 255, 255);
-                        color: rgb(0, 0, 0);
-                        font-size: 24px;
-                        font-weight: bold;
-                        border: none;
-                        border-radius: 5px;
-                }
-
-                input[type="text"] {
-                        padding: 20px 30px;
-                        font-size: 24px;
-                        font-weight: bold;
-                        border: none;
-                        border-radius: 5px;
-                        border: 2px solid black;
-                }
-</style>
-<table id="calcu">
-  <tr>
-    <td colspan="3"><input type="text" id="result"></td>
-    <td><input type="button" value="c" onclick="clr()"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="1" onclick="dis('1')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="2" onclick="dis('2')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="3" onclick="dis('3')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="/" onclick="dis('/')" onkeydown="myFunction(event)"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="4" onclick="dis('4')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="5" onclick="dis('5')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="6" onclick="dis('6')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="*" onclick="dis('*')" onkeydown="myFunction(event)"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="7" onclick="dis('7')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="8" onclick="dis('8')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="9" onclick="dis('9')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="-" onclick="dis('-')" onkeydown="myFunction(event)"></td>
-  </tr>
-  <tr>
-    <td><input type="button" value="0" onclick="dis('0')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="." onclick="dis('.')" onkeydown="myFunction(event)"></td>
-    <td><input type="button" value="=" onclick="solve()"></td>
-    <td><input type="button" value="+" onclick="dis('+')" onkeydown="myFunction(event)"></td>
-  </tr>
-</table>
-<script>
-                    function dis(val) {
-                        document.getElementById("result").value += val
-                }
-
-                function myFunction(event) {
-                        if (event.key == '0' || event.key == '1'
-                                || event.key == '2' || event.key == '3'
-                                || event.key == '4' || event.key == '5'
-                                || event.key == '6' || event.key == '7'
-                                || event.key == '8' || event.key == '9'
-                                || event.key == '+' || event.key == '-'
-                                || event.key == '*' || event.key == '/')
-                                document.getElementById("result").value += event.key;
-                }
-  
-
-                var cal = document.getElementById("calcu");
-                cal.onkeyup = function (event) {
-                        if (event.keyCode === 13) {
-                                console.log("Enter");
-                                let x = document.getElementById("result").value
-                                console.log(x);
-                                solve();
-                        }
-                }
-
-                function solve() {
-                        let x = document.getElementById("result").value
-                        let y = math.evaluate(x)
-                        document.getElementById("result").value = y
-                }
-
-                function clr() {
-                        document.getElementById("result").value = ""
-                }
+	aiptag.cmd.player.push(function() {
+		aiptag.adplayer = new aipPlayer({
+			AD_WIDTH: 960,
+			AD_HEIGHT: 540,
+			AD_DISPLAY: 'center', //default, fullscreen, center, fill
+			LOADING_TEXT: 'loading advertisement',
+			PREROLL_ELEM: function(){return document.getElementById('preroll')},
+			AIP_COMPLETE: function (evt){
+				
+   //skip_play();
+ 			},
+			AIP_REMOVE: function ()  {
+				// Here it's safe to remove the PREROLL_ELEM from the page if you want. But it's not recommend.
+			}
+		});
+	});
+	
+	 
+ 
+				function show_preroll() {
+ 					if (typeof aiptag.adplayer !== 'undefined') {
+				 	aiptag.cmd.player.push(function() { aiptag.adplayer.startPreRoll(); });
+					} else {
+				    	
+   //skip_play();
+ 
+					}
+				}
+	
 </script>
+    <nav class="Navigation hideAfterFullscreen">
+        <div class="Navigation-Container">
+            <a class="Navigation-Image" href="./"><img src="images/Logo.png"></a>
+            <ul>
+                <li class="Navigation-Button"><a href="./"><i class="las la-home"></i><p>Home</p></a></li>
+                <li class="Navigation-Button"><a href="./e.html"><i class="las la-hourglass-half"></i><p>Emulator</p></a></li>
+                <li class="Navigation-Button"><a href="./settings.html"><i class="las la-cog"></i><p>Settings</p></a></li>
+            <ul>
+        </ul></ul></div>
+    </nav>
+
+    
+    <div class="Projects-Frame hidden">
+        <div class="Projects-FrameBar">
+            <i id="close" class="las la-times-circle"></i>
+            <i id="fullscreen" class="las la-expand"></i>
+            <i id="link" class="las la-link"></i>
+        </div>
+        <iframe class="Projects-IFrame" src=""></iframe>
+    </div>
+
+     <div class="hideAfterFullscreen">
+        <center>
+            <h1 style="margin-top: 25px; color: var(--text-color1)">Geography Lesson Github</h1>
+   	 </center>
+		 
+        <hr>
+        <center style="padding: 2em 0 0 0">
+
+            <input type="text" class="Settings-TextInput" id="GameSearchBar" placeholder="Search For Project">
+        </center>
+    </div>
+
+    <div class="Projects-Container hideAfterFullscreen">
+
+    </div>
+
+    <script src="js/aboutblank.js"></script>
+    <script src="js/options.js"></script>
+    <script src="js/g.js"></script>
+		<style>
+	
+	.footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding-block: 15px;
+    line-height: 28px;
+    font-size: 15px;
+    margin-left: 30px;
+	margin-right: 30px;
+}
+	
+.footer a {
+  color: white;
+  text-decoration: none;
+  background-color: black;
+  transition: color 0.15s ease;
+}
+
+.footer a:hover {
+  color: rgb(225, 139, 9);
+  text-decoration: underline;
+}
+	</style>
+	<footer class="footer">
+<p>In a typical American middle school geography class, students embark on a fascinating journey to explore the diverse and dynamic landscapes of the United States. Through a combination of interactive lessons, engaging activities, and hands-on projects, students delve into the geographical features, regions, and cultures that define the nation.</p>
+<p>The curriculum often starts with an overview of the basic principles of geography, such as map reading, latitude and longitude, and the concept of physical and cultural landscapes. Students then dive into the specific regions of the United States, examining the unique characteristics of each, from the rolling plains of the Midwest to the towering peaks of the Rocky Mountains.</p>
+<p>Throughout the course, students learn about the history, culture, and economy of different regions, gaining a deeper understanding of the factors that shape the American landscape. They may also explore current events and environmental issues, such as climate change and natural disasters, to understand the impact of human activity on the environment.</p>
+<p>Hands-on activities, such as map projects, research assignments, and virtual field trips, help students apply their knowledge in practical ways and make real-world connections. By the end of the course, students develop a rich understanding of the geography of the United States, preparing them to be informed and engaged citizens in our increasingly interconnected world.</p>
+	
+	</footer>
+	
+	
+	
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HBH0VG561V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HBH0VG561V');
+</script>
+
+</body></html>
